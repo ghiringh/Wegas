@@ -499,14 +499,7 @@
                 <artifactId>neo4j-java-driver</artifactId>
                 <version>1.0.6</version>
             </dependency>
-            
-            <!-- Watson Conversation SDK -->
-            <dependency>
-                <groupId>com.ibm.watson.developer_cloud</groupId>
-                <artifactId>java-sdk</artifactId>
-                <version>3.3.1</version>
-            </dependency>
-            
+              
         </dependencies>
     </dependencyManagement>
 
