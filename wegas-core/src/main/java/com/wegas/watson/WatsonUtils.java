@@ -8,6 +8,7 @@
 
 package com.wegas.watson;
 
+import com.ibm.watson.developer_cloud.conversation.v1.ConversationService;
 import com.wegas.core.Helper;
 
 /**
@@ -21,9 +22,14 @@ import com.wegas.core.Helper;
 
 public class WatsonUtils {
     
-    private static final String WATSON_VERSION = Helper.getWegasProperty("watson.version", "");
+    public static final String WATSON_VERSION = Helper.getWegasProperty("watson.version", "");
     
     private static final String WATSON_USERNAME = Helper.getWegasProperty("watson.username", "");
     
     private static final String WATSON_PASSWORD = Helper.getWegasProperty("watson.password", "");
+    
+    static{
+        ConversationService service = new ConversationService(WATSON_VERSION);
+        service.setUsernameAndPassword(WATSON_USERNAME, WATSON_PASSWORD);
+    }
 }
