@@ -20,7 +20,7 @@ import com.wegas.core.Helper;
  */
 
 
-public class WatsonUtils {
+public class WatsonProperties {
     
     public static final String WATSON_VERSION = Helper.getWegasProperty("watson.version", "");
     
@@ -28,8 +28,10 @@ public class WatsonUtils {
     
     private static final String WATSON_PASSWORD = Helper.getWegasProperty("watson.password", "");
     
+    public static final ConversationService WATSON_SERVICE;
+    
     static{
-        ConversationService service = new ConversationService(WATSON_VERSION);
-        service.setUsernameAndPassword(WATSON_USERNAME, WATSON_PASSWORD);
+        WATSON_SERVICE = new ConversationService(WATSON_VERSION);
+        WATSON_SERVICE.setUsernameAndPassword(WATSON_USERNAME, WATSON_PASSWORD);
     }
 }
